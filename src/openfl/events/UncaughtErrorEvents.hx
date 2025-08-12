@@ -72,7 +72,7 @@ class UncaughtErrorEvents extends EventDispatcher
 	{
 		super.removeEventListener(type, listener, useCapture);
 
-		if (!__eventMap.exists(UncaughtErrorEvent.UNCAUGHT_ERROR))
+		if (__eventMap != null && !__eventMap.exists(UncaughtErrorEvent.UNCAUGHT_ERROR))
 		{
 			__enabled = false;
 		}
